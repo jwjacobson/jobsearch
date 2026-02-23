@@ -1,5 +1,5 @@
 import pytest
-from jobsearch.sites import linkedin, greenhouse
+from jobsearch.sites import linkedin, greenhouse, builtin
 
 @pytest.mark.parametrize("term", ["python", "django", "fastapi", "backend", "pytest"])
 def test_linkedin_url_single(term):
@@ -31,3 +31,13 @@ def test_greenhouse_url_compound():
     term = "backend engineer"
     url = greenhouse.build_url(term)
     assert url == f"https://my.greenhouse.io/jobs?query=backend%20engineer&lat=42.355492&lon=-71.048611"
+
+@pytest.mark.parametrize("term", ["python", "django", "fastapi", "backend", "pytest"])
+def test_builtin_url_single(term):
+    url = builtin.build_url(term)
+    assert url == f"https://www.builtinboston.com/jobs/remote/hybrid/office?search={term}"
+
+def test_builtin_url_compound():
+    term = "backend engineer"
+    url = builtin.build_url(term)
+    assert url == f"https://www.builtinboston.com/jobs/remote/hybrid/office?search=backend+engineer"
