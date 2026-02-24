@@ -1,6 +1,5 @@
-[//]: # (Badges: UV, Python version, )
 # jobsearch - automate job board searches
-Jobsearch launches a browser instance and automatically searches all provided search terms on all configured URLs, one tab per search. It is built using Playwright[https://playwright.dev/python/] and [Python 3.14](https://www.python.org/)
+Jobsearch launches a browser instance and automatically searches all provided search terms on all configured URLs, one tab per search. It is built using [Playwright](https://playwright.dev/python/) and [Python 3.14](https://www.python.org/)
 
 It is designed to be easily extensible and configurable, and is free to use, modify, and distribute under the terms of the [GPL](https://github.com/jwjacobson/jobsearch/blob/main/LICENSE).
 
