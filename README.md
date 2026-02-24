@@ -1,10 +1,10 @@
 # jobsearch - automate job board searches
-Jobsearch launches a browser instance and automatically searches all provided search terms on all configured URLs, one tab per search. It is built using [Playwright](https://playwright.dev/python/) and [Python 3.14](https://www.python.org/)
+Jobsearch launches a browser instance and automatically searches all provided search terms on all configured URLs, one tab per search. It is built using [Playwright](https://playwright.dev/python/) and [Python 3.14](https://www.python.org/).
 
 It is designed to be easily extensible and configurable, and is free to use, modify, and distribute under the terms of the [GPL](https://github.com/jwjacobson/jobsearch/blob/main/LICENSE).
 
 ## Installation
-First, [Install uv](https://docs.astral.sh/uv/getting-started/installation/) and [Clone this repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
+First, [Install uv](https://docs.astral.sh/uv/getting-started/installation/) and [Clone this repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
 
 Navigate to the project directory:
 ```bash
@@ -21,13 +21,17 @@ uv run playwright install
 ```
 
 ## Configuration
+Jobsearch is configured as-is to be useful to me. Unless you live in the same place and are looking for the same types of jobs, you will want to configure it to be useful to you.
+
+Of the three configured sites, builtinboston is Boston-specific, while `sites/greenhouse.py` and `sites/linkedin.py` default to Boston searches. Update them to suit your requirements.
+
 The file `config.toml` in the root directory contains search terms and the sites to be searched. To add or edit search terms, just edit the list `terms` on line 2.
 
 Jobsearch currently supports searches on LinkedIn, Greenhouse, and BuiltinBoston. To add support for another site, you will need to:
-1. Add a module for it in the `sites` directory (use the existing modules as models; the tricky part is figuring out each site's url format)
-2. Import it and add it to the SITES dict in `browser.py`  
-3. Add it to the `enabled` list in the `[sites]` table of `config.toml`
-4. (Optional but recommended) Add tests of your new module to `test_sites.py`
+1. Add a module for it in the `sites` directory (use the existing modules as models; the tricky part is figuring out each site's url format);
+2. Import it and add it to the SITES dict in `browser.py`  ;
+3. Add it to the `enabled` list in the `[sites]` table of `config.toml`;
+4. (Optional but recommended) Add tests of your new module to `test_sites.py`.
 
 ## Running jobsearch
 ```bash
@@ -35,7 +39,7 @@ uv run jobsearch
 ```
 
 ## Loading user settings
-Sites like LinkedIn are easier to use if you're logged in. You can point jobsearch at your browser's config folder by copying the file `.env-template` into a file called `.env`:
+Sites like LinkedIn are easier to use if you're logged in. You can point jobsearch at your browser's config folder (and thus run jobsearch with all your saved logins) by copying the file `.env-template` into a file called `.env`:
 ```bash
 cp .env-template .env 
 ```
