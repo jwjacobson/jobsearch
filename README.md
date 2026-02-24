@@ -1,3 +1,4 @@
+![Tests](https://github.com/jwjacobson/jobsearch/actions/workflows/tests.yml/badge.svg)
 # jobsearch - automate job board searches
 Jobsearch launches a browser instance and automatically searches all provided search terms on all configured URLs, one tab per search. It is built using [Playwright](https://playwright.dev/python/) and [Python 3.14](https://www.python.org/).
 
