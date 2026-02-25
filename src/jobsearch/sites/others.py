@@ -6,8 +6,9 @@ SITES = [
     "https://www.pyjobs.com/",
     "https://www.hireculture.org/findjob.aspx",
     "https://www.python.org/jobs/",
-    "https://djangojobboard.com/"
+    "https://djangojobboard.com/",
 ]
+
 
 def get_urls(sites: list[str] = SITES) -> list[str]:
     return sites

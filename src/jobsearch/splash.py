@@ -7,10 +7,11 @@ console = Console()
 
 RAINBOW = ["red", "yellow", "green", "cyan", "blue", "magenta"]
 
+
 def splash():
     art = pyfiglet.figlet_format("jobsearch", font="banner")
     lines = art.splitlines()
-    
+
     console.print()
     for i, line in enumerate(lines):
         color = RAINBOW[i % len(RAINBOW)]
