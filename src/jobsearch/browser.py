@@ -36,6 +36,3 @@ def run(settings):
         for url in others.get_urls(): # Sites in others don't have a term so get searched separately
             page = context.new_page()
             page.goto(url)
-
-        input("Press Enter to close browser...")
-        context.close()
