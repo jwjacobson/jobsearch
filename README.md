@@ -24,7 +24,7 @@ uv run playwright install
 ## Configuration
 Jobsearch is configured as-is to be useful to me. Unless you live in the same place and are looking for the same types of jobs, you will want to configure it to be useful to you.
 
-Of the included sites, builtinboston is Boston-specific, while `sites/greenhouse.py` and `sites/linkedin.py` default to Boston searches, and `google.py` defaults to Massachusetts. You can update them to suit your requirements.
+Of the included sites (located in `src/jobsearch/sites`), `builtin.py` is Boston-specific, while `greenhouse.py` and `linkedin.py` default to Boston searches, and `google.py` defaults to Massachusetts. You can update them to suit your requirements.
 
 The file `config.toml` in the root directory contains search terms and the sites to be searched. To add or edit search terms, just edit the list `terms` on line 2.
 
