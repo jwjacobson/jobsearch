@@ -1,5 +1,5 @@
 import pytest
-from jobsearch.sites import linkedin, greenhouse, builtin, google
+from jobsearch.sites import linkedin, greenhouse, builtin, google, others
 
 @pytest.mark.parametrize("term", ["python", "django", "fastapi", "backend", "pytest"])
 def test_linkedin_build_url_single(term):
@@ -60,3 +60,6 @@ def test_get_urls_google():
     result = google.get_urls(term)
     assert len(result) == len(google.SITES)
     assert all("python" in url for url in result)
+
+def test_get_urls_others():
+    assert others.get_urls() == others.SITES
