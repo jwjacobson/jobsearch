@@ -1,5 +1,5 @@
 """
-This module replicates the google searches performed by Brian's Job Search - https://briansjobsearch.com/ 
+This module replicates a portion of the google searches performed by Brian's Job Search - https://briansjobsearch.com/ 
 """
 
 from urllib import parse
