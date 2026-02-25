@@ -12,7 +12,7 @@ SITES = {
 USER_DATA_DIR = config("USER_DATA_DIR", None)
 
 
-def run(settings):
+def run(settings, on_ready=None):
     with sync_playwright() as p:
         if USER_DATA_DIR:
             context = p.chromium.launch_persistent_context(
@@ -33,3 +33,6 @@ def run(settings):
         ):  # Sites in others don't have a term so get searched separately
             page = context.new_page()
             page.goto(url)
+
+        if on_ready:
+            on_ready()

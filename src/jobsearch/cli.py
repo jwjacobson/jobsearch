@@ -8,8 +8,9 @@ app = typer.Typer()
 def main():
     splash.splash()
     settings = config.load()
-    browser.run(settings)
-    typer.pause("  press any key to close...")
+    # browser.run(settings)
+    browser.run(settings, on_ready=lambda: typer.pause("  press any key to close..."))
+    # typer.pause("  press any key to close...")
 
 
 def run():
