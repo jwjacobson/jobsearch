@@ -7,3 +7,6 @@ def build_url(term: str, location: str = "Boston, MA") -> str:
     term = parse.quote_plus(term)
     location = parse.quote_plus(location)
     return f"{BASE_URL}?keywords={term}&location={location}&{TIMESPAN}"
+
+def get_urls(term: str) -> list[str]:
+    return [build_url(term)]

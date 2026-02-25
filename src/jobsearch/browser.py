@@ -1,12 +1,18 @@
 from decouple import config
 from playwright.sync_api import sync_playwright
 
-from .sites import linkedin, greenhouse, builtin
+from .sites import (
+    linkedin,
+    greenhouse,
+    builtin,
+    google
+)
 
 SITES = {
-    "linkedin": linkedin.build_url,
-    "greenhouse": greenhouse.build_url,
-    "builtin": builtin.build_url,
+    "linkedin": linkedin.get_urls,
+    "greenhouse": greenhouse.get_urls,
+    "builtin": builtin.get_urls,
+    "google": google.get_urls
 }
 USER_DATA_DIR = config("USER_DATA_DIR", None)
 
@@ -24,9 +30,9 @@ def run(settings):
 
         for site in settings["sites"]["enabled"]:
             for term in settings["search"]["terms"]:
-                page = context.new_page()
-                url = SITES[site](term)
-                page.goto(url)
+                for url in SITES[site](term):
+                    page = context.new_page()
+                    page.goto(url)
 
         input("Press Enter to close browser...")
         context.close()
