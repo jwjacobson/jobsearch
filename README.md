@@ -24,11 +24,11 @@ uv run playwright install
 ## Configuration
 Jobsearch is configured as-is to be useful to me. Unless you live in the same place and are looking for the same types of jobs, you will want to configure it to be useful to you.
 
-Of the three configured sites, builtinboston is Boston-specific, while `sites/greenhouse.py` and `sites/linkedin.py` default to Boston searches. Update them to suit your requirements.
+Of the included sites, builtinboston is Boston-specific, while `sites/greenhouse.py` and `sites/linkedin.py` default to Boston searches, and `google.py` defaults to Massachusetts. You can update them to suit your requirements.
 
 The file `config.toml` in the root directory contains search terms and the sites to be searched. To add or edit search terms, just edit the list `terms` on line 2.
 
-Jobsearch currently supports searches on LinkedIn, Greenhouse, and BuiltinBoston. To add support for another site, you will need to:
+Jobsearch currently supports searches on LinkedIn, Greenhouse, BuiltinBoston, and Google. To add support for another site, you will need to:
 1. Add a module for it in the `sites` directory (use the existing modules as models; the tricky part is figuring out each site's url format);
 2. Import it and add it to the SITES dict in `browser.py`  ;
 3. Add it to the `enabled` list in the `[sites]` table of `config.toml`;
@@ -47,10 +47,13 @@ cp .env-template .env
 The value of `USER_DATA_DIR` should be the path to your browser's settings directory. For example, for the Chromium browser on my system, this is `~/.config/chromium`.
 
 > [!NOTE]
-> If you are already running a separate instance of Chromium, it will block Playwright's access to the user settings folder. One way around this is to copy the folder somewhere else (like into the project folder) and pointing jobsearch at that folder.
+> If you are already running a separate instance of Chromium, it will block Playwright's access to the user settings folder. One way around this is to copy the folder somewhere else (like into the project folder) and then point jobsearch at that folder.
 
 ## Feedback
 - For bug reports, please open an issue with a description of what you expected vs what you got
 - For suggestions, please open an issue with a description of the desired behavior
 - For gratuitous praise, please send a toot to https://fosstodon.org/@jeffjacobson
 - Thanks for stopping by!
+
+## Acknowledgments
+The google searches in `google.py` reproduce functionality provided by [Brian's Job Search](https://briansjobsearch.com/).
