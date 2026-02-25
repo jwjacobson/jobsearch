@@ -1,7 +1,7 @@
 from urllib import parse
 
 BASE_URL = "https://www.linkedin.com/jobs/search/"
-TIMESPAN = "f_TPR=r86400"
+TIMESPAN = "f_TPR=r86400" # last day
 
 def build_url(term: str, location: str = "Boston, MA") -> str:
     term = parse.quote_plus(term)

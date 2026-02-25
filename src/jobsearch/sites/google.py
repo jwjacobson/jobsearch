@@ -18,7 +18,7 @@ SITES = [
     "breezy.hr"
 ]
 LOCATION = "massachusetts"
-TIMESPAN = "tbs=qdr:d"
+TIMESPAN = "tbs=qdr:d" # last day
 
 def build_url(term: str, site: str, location: str = LOCATION) -> str:
     term = parse.quote(term)
