@@ -5,7 +5,8 @@ from .sites import (
     linkedin,
     greenhouse,
     builtin,
-    google
+    google,
+    others
 )
 
 SITES = {
@@ -33,6 +34,10 @@ def run(settings):
                 for url in SITES[site](term):
                     page = context.new_page()
                     page.goto(url)
+
+        for url in others.get_urls(): # Sites in others don't have a term so get searched separately
+            page = context.new_page()
+            page.goto(url)
 
         input("Press Enter to close browser...")
         context.close()
