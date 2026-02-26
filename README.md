@@ -34,8 +34,8 @@ Jobsearch currently supports searches on LinkedIn, Greenhouse, BuiltinBoston, an
 3. Add it to the `enabled` list in the `[sites]` table of `config.toml`;
 4. (Optional but recommended) Add tests of your new module to `test_sites.py`.
 
-> [!WARNING]
-> The Google module tends to trigger Google's captchas, which undermines the convenience of including them at all. If you are running into this consistently, I recommend disabling the google module and using [Brian's Job Search](https://briansjobsearch.com/) instead (more clicks than jobsearch, but less than doing a Google captcha for each search)
+> [!NOTE]
+> The Google module tends to trigger Google's captchas, which undermines the convenience of including them at all. For now I'm disabling the google module by default, but you can enable it in `config.toml` if you'd like to try it out. In the meantime, I recommend using [Brian's Job Search](https://briansjobsearch.com/) instead (more clicks than jobsearch, but less than doing a Google captcha for each search)
 
 
 ## Running jobsearch
