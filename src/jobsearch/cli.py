@@ -13,9 +13,9 @@ def main(
     splash.splash()
     settings = config.load()
 
-    if site and site not in browser.SITES:
+    if site and site not in settings['sites']['enabled']:
         typer.echo(
-            f"Unknown site '{site}'. Valid options: {', '.join(browser.SITES.keys())}"
+            f"Unrecognized site: '{site}'. Valid options: {', '.join(settings['sites']['enabled'])}"
         )
         raise typer.Exit(1)
     elif site:
