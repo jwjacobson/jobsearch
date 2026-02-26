@@ -7,7 +7,7 @@ def test_linkedin_build_url_single(term):
     url = linkedin.build_url(term)
     assert (
         url
-        == f"https://www.linkedin.com/jobs/search/?keywords={term}&location=Boston%2C+MA&f_TPR=r86400"
+        == f"https://www.linkedin.com/jobs/search/?keywords={term}&location=Boston%2C+MA&f_TPR=r86400&sortBy=DD"
     )
 
 
@@ -16,7 +16,7 @@ def test_linkedin_build_url_location():
     url = linkedin.build_url(term, "New York, NY")
     assert (
         url
-        == f"https://www.linkedin.com/jobs/search/?keywords={term}&location=New+York%2C+NY&f_TPR=r86400"
+        == f"https://www.linkedin.com/jobs/search/?keywords={term}&location=New+York%2C+NY&f_TPR=r86400&sortBy=DD"
     )
 
 
@@ -25,7 +25,7 @@ def test_linkedin_build_url_compound():
     url = linkedin.build_url(term)
     assert (
         url
-        == f"https://www.linkedin.com/jobs/search/?keywords=backend+engineer&location=Boston%2C+MA&f_TPR=r86400"
+        == f"https://www.linkedin.com/jobs/search/?keywords=backend+engineer&location=Boston%2C+MA&f_TPR=r86400&sortBy=DD"
     )
 
 
