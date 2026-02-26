@@ -5,8 +5,7 @@ from rich.console import Console
 
 console = Console()
 
-RAINBOW = ["red", "yellow", "green", "cyan", "blue", "magenta"]
-
+COLORS = ["magenta", "blue", "cyan", "bright_cyan", "bright_blue", "bright_magenta"]
 
 def splash():
     art = pyfiglet.figlet_format("jobsearch", font="banner")
@@ -14,8 +13,12 @@ def splash():
 
     console.print()
     for i, line in enumerate(lines):
-        color = RAINBOW[i % len(RAINBOW)]
+        color = COLORS[i % len(COLORS)]
         console.print(f"  [{color}]{line}[/{color}]")
     console.print()
-    console.print(f"  [white]{date.today().isoformat()}[/white]")
+    console.print(f"  [bright_yellow]{date.today().isoformat()}[/bright_yellow]")
     console.print()
+
+if __name__ == "__main__":
+    splash()
+    
