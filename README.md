@@ -39,8 +39,17 @@ Jobsearch currently supports searches on LinkedIn, Greenhouse, BuiltinBoston, an
 
 
 ## Running jobsearch
+To search all configured sites:
 ```bash
 uv run jobsearch 
+```
+To search one configured site:
+```bash
+uv run jobsearch --site greenhouse 
+```
+or
+```bash
+uv run jobsearch -s greenhouse 
 ```
 
 ## Loading user settings
