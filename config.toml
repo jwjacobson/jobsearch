@@ -2,4 +2,4 @@
 terms = ["python", "django", "fastapi", "backend engineer", "pytest"]
 
 [sites]
-enabled = ["linkedin", "greenhouse", "builtin", "google"]
+enabled = ["linkedin", "greenhouse", "builtin"]
