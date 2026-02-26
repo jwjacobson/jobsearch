@@ -58,7 +58,8 @@ def test_greenhouse_build_url_compound():
 def test_builtin_build_url_single(term):
     url = builtin.build_url(term)
     assert (
-        url == f"https://www.builtinboston.com/jobs/remote/hybrid/office?search={term}&daysSinceUpdated=1"
+        url
+        == f"https://www.builtinboston.com/jobs/remote/hybrid/office?search={term}&daysSinceUpdated=1"
     )
 
 

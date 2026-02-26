@@ -3,7 +3,7 @@ from urllib import parse
 BASE_URL = "https://www.linkedin.com/jobs/search/"
 LOCATION = "Boston, MA"
 TIMESPAN = "f_TPR=r86400"  # last day
-ORDER_BY = "sortBy=DD" # most recent first
+ORDER_BY = "sortBy=DD"  # most recent first
 
 
 def build_url(term: str, location: str = LOCATION) -> str:
