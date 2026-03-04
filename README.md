@@ -1,8 +1,10 @@
+# jobsearch - automate job board searches
 ![Tests](https://github.com/jwjacobson/jobsearch/actions/workflows/tests.yaml/badge.svg)
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
-# jobsearch - automate job board searches
-Jobsearch launches a browser instance and automatically searches all provided search terms on all configured URLs, one tab per search. It is built using [Playwright](https://playwright.dev/python/) and [Python 3.14](https://www.python.org/).
+Jobsearch launches a browser instance and automatically searches all provided search terms on all configured URLs, one tab per search. It also has a subcommand, `jobsearch network`, to automatically open the activity feeds configured LinkedIn profiles for easy access to people you want to interact with instead of relying on the algorithm.
+
+It is built using [Playwright](https://playwright.dev/python/) and [Python 3.14](https://www.python.org/).
 
 It is designed to be easily extensible and configurable, and is free to use, modify, and distribute under the terms of the [GPL](https://github.com/jwjacobson/jobsearch/blob/main/LICENSE).
 
@@ -39,6 +41,8 @@ Jobsearch currently supports searches on LinkedIn, Greenhouse, BuiltinBoston, an
 > [!NOTE]
 > The searches in the Google module tend to trigger Google's captchas, which eliminates the convenience of including them at all. For now I'm disabling the google module by default, but you can enable it in `config.toml` if you'd like to try it out. In the meantime, I recommend using [Brian's Job Search](https://briansjobsearch.com/) instead (more clicks than jobsearch, but less than doing a Google captcha for each search)
 
+### Configuring the network command
+To use the network command, you will need to add some LinkedIn usernames to the `LINKEDIN_PROFILES` field in `.env` (some dummy ones are filled by default in `.env-template` to show the format). 
 
 ## Running jobsearch
 To search all configured sites:
@@ -52,6 +56,10 @@ uv run jobsearch --site greenhouse
 or
 ```bash
 uv run jobsearch -s greenhouse 
+```
+To open the activity feeds of all configured profiles:
+```bash
+uv run jobsearch network 
 ```
 
 ## Loading user settings
