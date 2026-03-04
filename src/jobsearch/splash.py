@@ -5,7 +5,7 @@ from rich.console import Console
 
 console = Console()
 
-COLORS = ["magenta", "blue", "cyan", "bright_cyan", "bright_blue", "bright_magenta"]
+COLORS = ["magenta","cyan", "bright_cyan", "blue", "bright_blue", "bright_magenta"]
 
 def splash():
     art = pyfiglet.figlet_format("jobsearch", font="banner")
