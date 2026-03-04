@@ -5,12 +5,15 @@ app = typer.Typer()
 settings: dict | None = None
 
 
-@app.callback()
-def setup():
+@app.callback(invoke_without_command=True)
+def setup(ctx: typer.Context):
     """Run setup before any command."""
     global settings
     splash.splash()
     settings = config.load()
+
+    if ctx.invoked_subcommand is None:
+        ctx.invoke(main, site=None)
 
 @app.command()
 def main(
