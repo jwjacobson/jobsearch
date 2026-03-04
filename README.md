@@ -2,6 +2,7 @@
 ![Tests](https://github.com/jwjacobson/jobsearch/actions/workflows/tests.yaml/badge.svg)
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+
 Jobsearch launches a browser instance and automatically searches all provided search terms on all configured URLs, one tab per search. It also has a subcommand, `jobsearch network`, to automatically open the activity feeds configured LinkedIn profiles for easy access to people you want to interact with instead of relying on the algorithm.
 
 It is built using [Playwright](https://playwright.dev/python/) and [Python 3.14](https://www.python.org/).
