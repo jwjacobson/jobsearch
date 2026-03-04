@@ -25,7 +25,7 @@ def test_linkedin_build_url_compound():
     url = linkedin.build_url(term)
     assert (
         url
-        == f"https://www.linkedin.com/jobs/search/?keywords=backend+engineer&location=Boston%2C+MA&f_TPR=r86400&sortBy=DD"
+        == "https://www.linkedin.com/jobs/search/?keywords=backend+engineer&location=Boston%2C+MA&f_TPR=r86400&sortBy=DD"
     )
 
 
@@ -50,7 +50,7 @@ def test_greenhouse_build_url_compound():
     url = greenhouse.build_url(term)
     assert (
         url
-        == f"https://my.greenhouse.io/jobs?query=backend%20engineer&lat=42.355492&lon=-71.048611"
+        == "https://my.greenhouse.io/jobs?query=backend%20engineer&lat=42.355492&lon=-71.048611"
     )
 
 
@@ -68,7 +68,7 @@ def test_builtin_build_url_compound():
     url = builtin.build_url(term)
     assert (
         url
-        == f"https://www.builtinboston.com/jobs/remote/hybrid/office?search=backend+engineer&daysSinceUpdated=1"
+        == "https://www.builtinboston.com/jobs/remote/hybrid/office?search=backend+engineer&daysSinceUpdated=1"
     )
 
 
