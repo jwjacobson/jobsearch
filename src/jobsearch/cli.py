@@ -6,21 +6,22 @@ settings: dict | None = None
 
 
 @app.callback(invoke_without_command=True)
-def setup(ctx: typer.Context):
+def setup(
+    ctx: typer.Context,
+    site: str | None = typer.Option(
+        None, "--site", "-s", help="Search only the specified site."
+    ),
+):
     """Run setup before any command."""
     global settings
     splash.splash()
     settings = config.load()
 
     if ctx.invoked_subcommand is None:
-        ctx.invoke(main, site=None)
+        ctx.invoke(main, site=site)
 
 @app.command()
-def main(
-    site: str | None = typer.Option(
-        None, "--site", "-s", help="Search only the specified site."
-    ),
-):
+def main(site: str | None = None):
     """Search all configured keywords on all configured sites or specified site"""
     assert settings is not None
 
