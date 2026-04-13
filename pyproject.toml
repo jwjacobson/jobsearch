@@ -20,3 +20,6 @@ dev = [
 
 [project.scripts]
 jobsearch = "jobsearch.cli:run"
+
+[tool.uv]
+package = true
