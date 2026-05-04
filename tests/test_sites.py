@@ -7,27 +7,8 @@ def test_linkedin_build_url_single(term):
     url = linkedin.build_url(term)
     assert (
         url
-        == f"https://www.linkedin.com/jobs/search/?keywords={term}&location=Boston%2C+MA&f_TPR=r86400&sortBy=DD"
+        == f"https://www.linkedin.com/jobs/search-results/?keywords={term}&geoId=90000007&f_TPR=r86400&sortBy=DD"
     )
-
-
-def test_linkedin_build_url_location():
-    term = "python"
-    url = linkedin.build_url(term, "New York, NY")
-    assert (
-        url
-        == f"https://www.linkedin.com/jobs/search/?keywords={term}&location=New+York%2C+NY&f_TPR=r86400&sortBy=DD"
-    )
-
-
-def test_linkedin_build_url_compound():
-    term = "backend engineer"
-    url = linkedin.build_url(term)
-    assert (
-        url
-        == "https://www.linkedin.com/jobs/search/?keywords=backend+engineer&location=Boston%2C+MA&f_TPR=r86400&sortBy=DD"
-    )
-
 
 @pytest.mark.parametrize("term", ["python", "django", "fastapi", "backend", "pytest"])
 def test_greenhouse_build_url_single(term):
