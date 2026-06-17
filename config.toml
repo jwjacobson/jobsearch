@@ -1,5 +1,5 @@
 [search]
-terms = ["python", "django", "fastapi", "backend", "pytest"]
+terms = ["python", "django", "fastapi", "backend", "ai"]
 
 [sites]
-enabled = ["linkedin", "greenhouse", "builtin"]
+enabled = ["greenhouse", "builtin"]
